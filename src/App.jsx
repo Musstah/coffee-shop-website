@@ -9,10 +9,10 @@ const App = () => {
   return (
     <div className="overflow-x-hidden">
       <Hero />
-      <Services />
-      <WhereToBuy />
-      <AppBanner />
-      <Footer />
+      {/* <Services /> */}
+      {/* <WhereToBuy /> */}
+      {/* <AppBanner /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
