@@ -26,14 +26,14 @@ const Hero = () => {
             <div className="text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28">
               <motion.h1
                 initial={{ opacity: 0, y: -100 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
                   damping: 10,
                   delay: 1,
                 }}
-                className="text-7xl font-bold leading-tight ml-14"
+                className="font-bold leading-tight text-7xl ml-14"
               >
                 Blvck Tumbler
               </motion.h1>
@@ -64,7 +64,8 @@ const Hero = () => {
             <div className="relative">
               <motion.img
                 initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
@@ -105,34 +106,36 @@ const Hero = () => {
               </motion.div>
             </div>
             {/* third div section */}
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                delay: 1.2,
-              }}
-              className="text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28"
-            >
-              <h1 className="opacity-0 text-7xl font-bold leading-tight ml-14">
-                Blvck Tumbler
-              </h1>
-              <div className="relative">
-                <div className="relative z-10 space-y-4">
-                  <h1 className="text-2xl">Blvck Tumbler</h1>
-                  <h1 className="text-sm opacity-55 loading-loose">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Animi fugiat quae porro nihil, Animi fugiat quae porro
-                    nihil, Animi fugiat quae porro nihil, Animi fugiat quae
-                    porro nihil,
-                  </h1>
+            <div className="hidden lg:block">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 1.2,
+                }}
+                className="text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28"
+              >
+                <h1 className="font-bold leading-tight opacity-0 text-7xl ml-14">
+                  Blvck Tumbler
+                </h1>
+                <div className="relative">
+                  <div className="relative z-10 space-y-4">
+                    <h1 className="text-2xl">Blvck Tumbler</h1>
+                    <h1 className="text-sm opacity-55 loading-loose">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Animi fugiat quae porro nihil, Animi fugiat quae porro
+                      nihil, Animi fugiat quae porro nihil, Animi fugiat quae
+                      porro nihil,
+                    </h1>
+                  </div>
+                  <div className="absolute -top-6 -right-10 w-[250px] h-[170px] bg-darkGray/50"></div>
                 </div>
-                <div className="absolute -top-6 -right-10 w-[250px] h-[170px] bg-darkGray/50"></div>
-              </div>
-            </motion.div>
-            <div></div>
+              </motion.div>
+              <div></div>
+            </div>
           </div>
         </div>
         {/* sidebar Menu section  */}
@@ -140,20 +143,20 @@ const Hero = () => {
           <motion.div
             initial={{ x: "100*" }}
             whileInView={{ x: 0 }}
-            className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primaryDark/80 backdrop-blur-sm z-10"
+            className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primaryDark/80 backdrop-blur-sm z-50"
           >
-            <div className="w-full h-full flex justify-center items-center ">
+            <div className="flex items-center justify-center w-full h-full ">
               <div className="flex flex-col justify-center gap-6 text-white">
                 {/* line */}
                 <div className="w-[1px] h-[70px] bg-white"></div>
                 {/* social Icons  */}
-                <div className="inline-block p-2 rounded-full cursor-pointer border border-white">
+                <div className="inline-block p-2 border border-white rounded-full cursor-pointer">
                   <FaFacebook className="text-2xl" />
                 </div>
-                <div className="inline-block p-2 rounded-full cursor-pointer border border-white">
+                <div className="inline-block p-2 border border-white rounded-full cursor-pointer">
                   <FaTwitter className="text-2xl" />
                 </div>
-                <div className="inline-block p-2 rounded-full cursor-pointer border border-white">
+                <div className="inline-block p-2 border border-white rounded-full cursor-pointer">
                   <FaInstagram className="text-2xl" />
                 </div>
 
